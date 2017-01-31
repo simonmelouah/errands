@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Errands App</title>
+    <link rel="icon" type="image/png" href="/static/logos/tasks.png" sizes="96x96">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+<img class="center-block" src="/static/logos/tasks_small.png">
+<h1 class="text-center" style="color: #143a60; font-style: italic;"><strong>Errands</strong></h1>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href='/tasks/index' name="home">Home</a></li>
+                    <li role="presentation"><a href='/tasks/save_task' name="books">Add New Errand</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                            <li><a name="logout" href="/tasks/sign_out">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="container">
+{% block main %}
+{% endblock %}
+</div>
+</body>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script src="/static/js/todolist.js"></script>
+<script ype="text/javascript">
+    $(document).ready(function(){
+        $(function() {
+            $('.datetimepicker2').datepicker({
+                format: 'dd/mm/yyyy',
+                startDate: '-3d'
+            });
+          });
+    });
+
+</script>
+</html>
